@@ -45,25 +45,27 @@ for (let i of symbols){
 const tableCards = [];
 for (let i = 0; i < 12; i++){
     let draw = Math.floor(Math.random() * cards.length);
-    tableCards.push(cards.splice(draw,1)); //splice removes element from cards and pushes it to the tableCards array
+    let array = cards.splice(draw,1)
+    tableCards.push(array[0]); //splice removes element from cards and pushes it to the tableCards array
+    
 }
 console.log(tableCards[0]);
 //function displayCards(){
   //  console.log(tableCards);
     let table = document.querySelector("table");
     let i = 0;
-    let j = 0;
+
     for (let x = 0; x<4; x++){//rows
         let row = table.insertRow();
         for(let y = 0; y<3; y++){//columns
             let cell = row.insertCell();
-            let card = tableCards[i][j];
+            let card = tableCards[i];
             //.innerHTML is used to get/set the HTML content of an element node
             cell.innerHTML = '<img src = "' + card.imageName + '">'; //NEED TO GET CARD'S SOURCE!!
             i++;
 
         }
-        j++
+
     }
 //}
 //console.log(tableCards) //correct path to image shows in console under currentSource
