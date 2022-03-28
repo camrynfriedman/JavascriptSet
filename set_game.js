@@ -20,8 +20,8 @@ class Card{
 //         this.source = src
 //     }
 // }
-
-
+const totalSets = 0;
+const savedCards = [];
 const cards = [];
 const symbols = ["oval", "squiggle", "diamond"];
 const colors = ["red", "purple", "green"];
@@ -60,9 +60,46 @@ function displayCards(){
             let cell = row.insertCell();
             let card = tableCards[i];
             //.innerHTML is used to get/set the HTML content of an element node
-            cell.innerHTML = '<img src = "' + card.imageName + '">'; //NEED TO GET CARD'S SOURCE!!
+            cell.innerHTML = '<a href= "javascript:void(0);" onclick="save();" > <img src = "' + card.imageName + '"  ></a>'; //NEED TO GET CARD'S SOURCE!
             i++;
         }
     }
+}
+
+function checkEachCharacteristic(char1, char2, char3){
+    let result = false;
+    if (char1 == char2 && char2 == char3){
+            result = true;
+    } else if (char1 != char2 && char2 != char3 && char1 != char3){
+            result = true;
+    }
+    return result;
+}
+
+function save(){
+    const child = this.firstChild;
+    const src = child.getAttribute("src");
+    const cont = true;
+    const i = 0;
+    const card = 0;
+    while(cont){
+        if(src == tableCards[i]){
+            card = tableCards[i];
+            cont = false;
+        }
+        i++;
+    }
+    savedCards[savedCards.length] = card;
+    if (savedCards.length == 3){
+        let result = document.getElementById("check");
+        if(checkEachCharacteristic(savedCards[0].symbol, savedCards[1].symbol, savedCards[2].symbol) && checkEachCharacteristic(savedCards[0].color, savedCards[1].color, savedCards[2].color) && checkEachCharacteristic(savedCards[0].numSym, savedCards[1].numSym, savedCards[2].numSym) && checkEachCharacteristic(savedCards[0].shading, savedCards[1].shading, savedCards[2].shading)){
+            totalSets++;
+            result.textContent("You found a set!");
+        }else{
+            result.textContent("That is not a set");
+        }
+    savedCards.length = 0;
+    }
+
 }
 displayCards();
