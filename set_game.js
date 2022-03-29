@@ -60,7 +60,7 @@ function displayCards(){
             let cell = row.insertCell();
             let card = tableCards[i];
             //.innerHTML is used to get/set the HTML content of an element node
-            cell.innerHTML = '<a href= "javascript:void(0);" onclick="save(' + i + ');" > <img src = "' + card.imageName + '"  ></a>'; //NEED TO GET CARD'S SOURCE!
+            cell.innerHTML = '<a href= "javascript:void(0);" onclick="save(' + i + ');" on > <img src = "' + card.imageName + '"  ></a>'; //NEED TO GET CARD'S SOURCE!
             i++;
         }
     }
@@ -91,7 +91,7 @@ function save(spot){
     savedCards[savedCards.length] = card;
     if (savedCards.length == 3){
         let result = document.getElementById("check");
-        if(checkEachCharacteristic(savedCards[0].symbol, savedCards[1].symbol, savedCards[2].symbol) && checkEachCharacteristic(savedCards[0].color, savedCards[1].color, savedCards[2].color) && checkEachCharacteristic(savedCards[0].numSym, savedCards[1].numSym, savedCards[2].numSym) && checkEachCharacteristic(savedCards[0].shading, savedCards[1].shading, savedCards[2].shading)){
+        if(checkEachCharacteristic(savedCards[0].symbol, savedCards[1].symbol, savedCards[2].symbol) && checkEachCharacteristic(savedCards[0].color, savedCards[1].color, savedCards[2].color) && checkEachCharacteristic(savedCards[0].numSym, savedCards[1].numSym, savedCards[2].numSym) && checkEachCharacteristic(savedCards[0].shading, savedCards[1].shading, savedCards[2].shading) && savedCards[0]!=savedCards[1] && savedCards[0] != savedCards[2] && savedCards[1] != savedCards[2]){
             totalSets++;
             alert("You found a set!");
         }else{
