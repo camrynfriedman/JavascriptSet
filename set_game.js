@@ -138,16 +138,19 @@ function removeThreeCards(){
 
 function addThreeCards(check) {
 
-    let num = tableCards.length;
-    for (let i = 0; i < 3; i++){
-        let draw = Math.floor(Math.random() * cards.length);
-        let array = cards.splice(draw,1);
-        tableCards.push(array[0]); //splice removes element from cards and pushes it to the tableCards array
+    if(cards.length > 0){
+        for (let i = 0; i < 3; i++){
+            let draw = Math.floor(Math.random() * cards.length);
+            let array = cards.splice(draw,1);
+            tableCards.push(array[0]); //splice removes element from cards and pushes it to the tableCards array
 
-    }
-    if(check){
-        removeCards();
-        displayCards();
+        }
+        if(check){
+            removeCards();
+            displayCards();
+        }
+    }else{
+        //INFORM USER THAT THERE ARE NO CARDS LEFT
     }
 
 
