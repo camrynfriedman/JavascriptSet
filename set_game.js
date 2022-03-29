@@ -94,6 +94,12 @@ function save(spot){
         if(checkEachCharacteristic(savedCards[0].symbol, savedCards[1].symbol, savedCards[2].symbol) && checkEachCharacteristic(savedCards[0].color, savedCards[1].color, savedCards[2].color) && checkEachCharacteristic(savedCards[0].numSym, savedCards[1].numSym, savedCards[2].numSym) && checkEachCharacteristic(savedCards[0].shading, savedCards[1].shading, savedCards[2].shading) && savedCards[0]!=savedCards[1] && savedCards[0] != savedCards[2] && savedCards[1] != savedCards[2]){
             totalSets++;
             alert("You found a set!");
+            removeThreeCards();
+            if(tableCards.length < 12){
+                addThreeCards();
+                }
+                displayCards();
+        
         }else{
             alert("That is not a set");
         }
