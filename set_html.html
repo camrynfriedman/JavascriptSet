@@ -20,13 +20,41 @@
             <li>Shading: Filled, Striped, Open</li>
         </ul>
         <p>The object of the game is to get a Set. In this case, a Set consists of 3 cards where each of the card's features are the SAME on each card, or DIFFERENT on each card.</p>
+        <p>Example 1:</p>
+        <div class = "exampleRow">
+            <div class = "exampleColumn">
+                <img src="images/2oor.png">
+            </div>
+            <div class = "exampleColumn">
+                <img src="images/2osr.png">
+            </div>
+            <div class = "exampleColumn">
+                <img src="images/2ofr.png">
+            </div>
+        </div>
+
+        <p>Example 2:</p>
+        <div class = "exampleRow">
+            <div class = "exampleColumn">
+                <img src="images/1ssg.png">
+            </div>
+            <div class = "exampleColumn">
+                <img src="images/2osp.png">
+            </div>
+            <div class = "exampleColumn">
+                <img src="images/3dsr.png">
+            </div>
+        </div>
+        
+                
         <p>When you identify a correct set, the cards will be removed from the table and three new ones will appear.</p>
         <p>There's a chance that you are unable to identify any sets on the table. In this case, you can choose to add three new cards to the table.</p>
+
     </div>
     <!--Provide an example of a Set once we figure out how to display them on the screen (CSS?)-->
     <h2>Game</h2>
     <div id="table">
-        <a id="addCards" href="javascript:void(0);" onclick="addThreeCards(true)">Add Three Cards</a>
+        <button id="addCards" href="javascript:void(0);" onclick="addThreeCards(true)">Add Three Cards</button>
         <table>
             <!--Javascript handles populating the images here-->
         </table>

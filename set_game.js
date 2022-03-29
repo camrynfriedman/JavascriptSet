@@ -7,19 +7,8 @@ class Card{
         this.imageName = imgName;
     }
 
-    // get symb(){
-    //     return this.symbol;
-    // }
-    // get image(){
-    //     return this.imageName;
-    // }
 }
 
-// class Image{
-//     constructor(src){
-//         this.source = src
-//     }
-// }
 let totalSets = 0;
 const savedCards = [];
 const cards = [];
@@ -77,11 +66,6 @@ function removeCards(){
         for (let i = 0; i < 3; i++){
             table.deleteRow(0);
         }
-    
-    // let count = Math.ceil(tableCards.length /4);
-    // for (let i = 0; i < count; i++){
-    //     table.deleteRow(i);
-    // }
 }
 
 
@@ -99,14 +83,7 @@ function save(spot){
     
     let cont = true;
     let card = tableCards[spot];
-    // let i = 0;
-    // while(cont){
-    //     if(src == tableCards[i]){
-    //        let card = tableCards[i];
-    //         cont = false;
-    //     }
-    //     i++;
-    // }
+
     savedCards[savedCards.length] = card;
     if (savedCards.length == 3){
         let result = document.getElementById("check");
