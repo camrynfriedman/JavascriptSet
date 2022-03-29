@@ -127,7 +127,7 @@ function addThreeCards(check) {
             displayCards();
         }
     }else{
-        //INFORM USER THAT THERE ARE NO CARDS LEFT
+        alert("There are no more cards left in the deck!")
     }
 
 
