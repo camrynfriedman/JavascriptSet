@@ -53,10 +53,16 @@ for (let i = 0; i < 12; i++){
 function displayCards(){
     let table = document.querySelector("table");
     let i = 0;
+    let rows = 3;
+    let cells = 4;
+    if(tableCards.length > 12){
+        cells = Math.ceil(tableCards.length /rows);
+ 
+    }
 
-    for (let x = 0; x<3; x++){//rows
+    for (let x = 0; x<rows; x++){//rows
         let row = table.insertRow();
-        for(let y = 0; y<4; y++){//columns
+        for(let y = 0; y<cells; y++){//columns
             let cell = row.insertCell();
             let card = tableCards[i];
             //.innerHTML is used to get/set the HTML content of an element node
@@ -66,12 +72,18 @@ function displayCards(){
     }
 }
 
-function removeCards(){
+function removeCards(check){
     let table  = document.querySelector("table");
-    if(tableCards.length == 12){
+    if(check){
         for (let i = 0; i < 3; i++){
             table.deleteRow(0);
         }
+    }else{
+        let count = Math.ceil(tableCards.length /5);
+        for (let i = 0; i < count; i++){
+            table.deleteRow(0);
+        }
+
     }
     // let count = Math.ceil(tableCards.length /4);
     // for (let i = 0; i < count; i++){
@@ -110,9 +122,13 @@ function save(spot){
             alert("You found a set!");
             removeThreeCards();
             if(tableCards.length < 12){
-                addThreeCards();
+                addThreeCards(false);
             }
-            removeCards();
+            if(tableCards.length == 12){
+                removeCards(true);
+            }else{
+                removeCards(false);
+            }
             displayCards();
         
         }else{
@@ -131,13 +147,24 @@ function removeThreeCards(){
 
 }
 
-function addThreeCards() {
+function addThreeCards(check) {
+
+    let num = tableCards.length;
     for (let i = 0; i < 3; i++){
         let draw = Math.floor(Math.random() * cards.length);
-        let array = cards.splice(draw,1)
+        let array = cards.splice(draw,1);
         tableCards.push(array[0]); //splice removes element from cards and pushes it to the tableCards array
-        
+
     }
+    if(check){
+        if(num > 12){
+            removeCards(true);
+        }else{
+            removeCards(false);
+        }
+        displayCards();
+    }
+
 
 }
 
