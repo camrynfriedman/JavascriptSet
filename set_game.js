@@ -21,7 +21,7 @@ class Card{
 //     }
 // }
 let totalSets = 0;
-let savedCards = [];
+const savedCards = [];
 const cards = [];
 const symbols = ["oval", "squiggle", "diamond"];
 const colors = ["red", "purple", "green"];
@@ -94,6 +94,11 @@ function save(spot){
         if(checkEachCharacteristic(savedCards[0].symbol, savedCards[1].symbol, savedCards[2].symbol) && checkEachCharacteristic(savedCards[0].color, savedCards[1].color, savedCards[2].color) && checkEachCharacteristic(savedCards[0].numSym, savedCards[1].numSym, savedCards[2].numSym) && checkEachCharacteristic(savedCards[0].shading, savedCards[1].shading, savedCards[2].shading)){
             totalSets++;
             result.textContent = "You found a set!";
+            removeThreeCards();
+            if(tableCards.length < 12){
+            addThreeCards();
+            }
+            displayCards();
         }else{
             result.textContent = "That is not a set";
         }
@@ -101,4 +106,23 @@ function save(spot){
     }
 
 }
+
+function removeThreeCards(){
+    for(let i = 0; i < savedCards.length; i++){
+       let spot = tableCards.indexOf(savedCards[i]);
+        tableCards.splice(spot, 1);
+    }
+
+}
+
+function addThreeCards() {
+    for (let i = 0; i < 3; i++){
+        let draw = Math.floor(Math.random() * cards.length);
+        let array = cards.splice(draw,1)
+        tableCards.push(array[0]); //splice removes element from cards and pushes it to the tableCards array
+        
+    }
+
+}
+
 displayCards();
