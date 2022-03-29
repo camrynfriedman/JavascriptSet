@@ -93,9 +93,9 @@ function save(spot){
         let result = document.getElementById("check");
         if(checkEachCharacteristic(savedCards[0].symbol, savedCards[1].symbol, savedCards[2].symbol) && checkEachCharacteristic(savedCards[0].color, savedCards[1].color, savedCards[2].color) && checkEachCharacteristic(savedCards[0].numSym, savedCards[1].numSym, savedCards[2].numSym) && checkEachCharacteristic(savedCards[0].shading, savedCards[1].shading, savedCards[2].shading)){
             totalSets++;
-            result.textContent = "You found a set!";
+            alert("You found a set!");
         }else{
-            result.textContent = "That is not a set";
+            alert("That is not a set");
         }
     savedCards.length = 0;
     }
