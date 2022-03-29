@@ -60,11 +60,25 @@ function displayCards(){
             let cell = row.insertCell();
             let card = tableCards[i];
             //.innerHTML is used to get/set the HTML content of an element node
-            cell.innerHTML = '<a href= "javascript:void(0);" onclick="save(' + i + ');" on > <img src = "' + card.imageName + '"  ></a>'; //NEED TO GET CARD'S SOURCE!
+            cell.innerHTML = '<a href= "javascript:void(0);" onclick="save(' + i + ');" > <img src = "' + card.imageName + '"  ></a>'; //NEED TO GET CARD'S SOURCE!
             i++;
         }
     }
 }
+
+function removeCards(){
+    let table  = document.querySelector("table");
+    if(tableCards.length == 12){
+        for (let i = 0; i < 3; i++){
+            table.deleteRow(0);
+        }
+    }
+    // let count = Math.ceil(tableCards.length /4);
+    // for (let i = 0; i < count; i++){
+    //     table.deleteRow(i);
+    // }
+}
+
 
 function checkEachCharacteristic(char1, char2, char3){
     let result = false;
@@ -97,8 +111,9 @@ function save(spot){
             removeThreeCards();
             if(tableCards.length < 12){
                 addThreeCards();
-                }
-                displayCards();
+            }
+            removeCards();
+            displayCards();
         
         }else{
             alert("That is not a set");
