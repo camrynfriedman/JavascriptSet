@@ -72,19 +72,12 @@ function displayCards(){
     }
 }
 
-function removeCards(check){
+function removeCards(){
     let table  = document.querySelector("table");
-    if(check){
         for (let i = 0; i < 3; i++){
             table.deleteRow(0);
         }
-    }else{
-        let count = Math.ceil(tableCards.length /5);
-        for (let i = 0; i < count; i++){
-            table.deleteRow(0);
-        }
-
-    }
+    
     // let count = Math.ceil(tableCards.length /4);
     // for (let i = 0; i < count; i++){
     //     table.deleteRow(i);
@@ -124,11 +117,7 @@ function save(spot){
             if(tableCards.length < 12){
                 addThreeCards(false);
             }
-            if(tableCards.length == 12){
-                removeCards(true);
-            }else{
-                removeCards(false);
-            }
+            removeCards();
             displayCards();
         
         }else{
@@ -157,11 +146,7 @@ function addThreeCards(check) {
 
     }
     if(check){
-        if(num > 12){
-            removeCards(true);
-        }else{
-            removeCards(false);
-        }
+        removeCards();
         displayCards();
     }
 
