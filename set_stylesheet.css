@@ -11,9 +11,11 @@ p{
 }
 
 h1{
-    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    font-family: "Bungee Shade";
     color: rgb(80, 80, 80);
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 h2{
