@@ -53,6 +53,10 @@ button{
     padding: 15px 25px;
 }
 
+button:hover{
+    background:rgba(126, 122, 122, 0.15);
+}
+
 .logo-imgl{
     float:left;
 }
