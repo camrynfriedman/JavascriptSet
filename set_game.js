@@ -97,6 +97,7 @@ function checkSet(spot){
             }
             removeCards();
             displayCards();
+            document.getElementById("hintCard").innerHTML = "";
         
         }else{
             alert("That is not a set");
@@ -144,6 +145,37 @@ function addThreeCards(check) {
     }
 
 
+}
+
+function hintSet(){
+    
+    let cont = true;
+    let card1, card2, card3;
+    for (let i = 0; i < tableCards.length - 2; i++){
+        if (cont){
+            card1 = tableCards[i];
+            for (let j = i + 1; j < tableCards.length - 1; j++){
+                if (cont){
+                    card2 = tableCards[j];
+                    for (let k = j + 1; k < tableCards.length; k++){
+                        if (cont){
+                            card3 = tableCards[k];
+                            if(checkEachCharacteristic(card1.symbol, card2.symbol, card3.symbol) && checkEachCharacteristic(card1.color, card2.color, card3.color) && checkEachCharacteristic(card1.numSym, card2.numSym, card3.numSym) && checkEachCharacteristic(card1.shading, card2.shading, card3.shading)){
+                                cont = false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if (cont){
+        alert("No sets were found. Deal more cards.");
+    } else {
+        let hintCard = document.getElementById("hintCard");
+        let hintCards = [card1, card2, card3];
+        hintCard.innerHTML = '<img class="card" src = "' + hintCards[Math.floor(Math.random() * 3)].imageName + '"  ></img>';
+    }
 }
 
 displayCards();
