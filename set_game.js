@@ -55,7 +55,7 @@ function displayCards(){
             let cell = row.insertCell();
             let card = tableCards[i];
             //.innerHTML is used to get/set the HTML content of an element node
-            cell.innerHTML = '<a class = "cardImage" href= "javascript:void(0);" onclick="checkSet(' + i + ');" > <img class="card" src = "' + card.imageName + '"  ></a>'; //NEED TO GET CARD'S SOURCE!
+            cell.innerHTML = '<a class = "cardImage" id = "' + card.imageName + '" value = "" href= "javascript:void(0);" onclick="checkSet(' + i + ');" > <img class="card" src = "' + card.imageName + '"  ></a>'; //NEED TO GET CARD'S SOURCE!
             i++;
         }
     }
@@ -83,6 +83,7 @@ function checkSet(spot){
     let cont = true;
     let card = tableCards[spot];
 
+    
     savedCards[savedCards.length] = card;
     if (savedCards.length == 3){
         let result = document.getElementById("check");
@@ -99,9 +100,20 @@ function checkSet(spot){
         
         }else{
             alert("That is not a set");
-            //remove highlight
+            removeHighlight();
         }
     savedCards.length = 0;
+    }else{
+        let clicked = document.getElementById(card.imageName);
+            clicked.setAttribute("value", "clicked");
+    }
+
+}
+
+function removeHighlight(){
+    for(let i= 0; i < 3; i++){
+        let clicked = document.getElementById(savedCards[i].imageName);
+            clicked.setAttribute("value", "");
     }
 
 }
