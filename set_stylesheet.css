@@ -38,6 +38,9 @@ a{
 
 }
 
+.card:hover{
+    opacity: 0.5;
+}
 .exampleColumn{
     float: left;
     width: 33.33%;
