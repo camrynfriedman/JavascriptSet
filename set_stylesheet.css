@@ -23,14 +23,19 @@ h2{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-.card{
+a{
+    scale: 0.6;
     margin: 20px;
     border-width: 2px;
     border-style: solid;
     border-color: rgb(41, 41, 41);
     border-radius: 30px;
-    scale: 0.6;
+    display: inline-block;
+}
+
+.card{
+    border-radius: inherit;
+
 }
 
 .exampleColumn{
@@ -59,6 +64,8 @@ button{
 .logo-imgr{
     float:right;
 }
+
+
 
 .center {
     display: block;
