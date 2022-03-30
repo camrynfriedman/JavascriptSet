@@ -61,17 +61,12 @@ function displayCards(){
     }
 }
 
-function highlightSelectedCards(){
-
-}
-
 function removeCards(){
     let table  = document.querySelector("table");
         for (let i = 0; i < 3; i++){
             table.deleteRow(0);
         }
 }
-
 
 function checkEachCharacteristic(char1, char2, char3){
     let result = false;
