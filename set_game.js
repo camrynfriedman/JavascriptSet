@@ -91,7 +91,6 @@ function checkSet(spot){
             totalSets++;
             document.getElementById("check").textContent = "You found a set!";
             document.getElementById("count").textContent = "You have found " + totalSets +" Sets!";
-            //remove highlight
             removeThreeCards();
             if(tableCards.length < 12){
                 addThreeCards(false);
