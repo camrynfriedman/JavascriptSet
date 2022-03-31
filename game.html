@@ -3,14 +3,27 @@
     <meta charset="utf-8">
     <link rel = "stylesheet" href="set_stylesheet.css">
     <title>Game of Set - Javascript</title>
-    <img src="images/header_image.jpeg" class="center">
-
-    <a class = "tutorial" href="tutorial.html"><button>How to Play</button></a>
-    <button id="addCards" href="javascript:void(0);" onclick="addThreeCards(true)">Add Three Cards</button>
-    <button id="hintSet" href="javascript:void(0);" onclick="hintSet()">Get A Hint</button>
 </head>
 
 <body>
+    <div class="grid-container">
+        <div class="grid-item">
+            <a class = "tutorial" href="tutorial.html"><button>How to Play</button></a>
+        </div>
+        <div class="grid-item">
+            <a href="game.html"><button>Restart Game</button></a>
+        </div>
+                <div class="image-grid-item">
+            <img src="images/header_image.jpeg" class="center">
+        </div>
+        <div class="grid-item">
+            <button id="addCards" href="javascript:void(0);" onclick="addThreeCards(true)">Add Three Cards</button>
+        </div>
+        <div class="grid-item">
+            <button id="hintSet" href="javascript:void(0);" onclick="hintSet()">Hint</button>
+        </div>
+
+      </div>
 
     <!--Provide an example of a Set once we figure out how to display them on the screen (CSS?)-->
     <p id="hintCard"></p>
