@@ -89,21 +89,21 @@ table{
 }
 
 .grid-container {
-    display: grid;
+display: flex;
     grid-template-columns: 1fr 1fr 4fr 2fr;
-    grid-template-rows: auto;
-    grid-template-areas: "button button image image image image hint hint button button image image image image hintimg hintimg";
     background-color: #ffffff;
     padding: 10px;
   }
   
   .grid-item {
-    border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
     font-size: 30px;
     text-align: center;
   }
 
+  .image-grid-item{
+      scale: 1;
+  }
   .image-grid-item {
       grid-column-start: 3;
       grid-column-end: 5;
