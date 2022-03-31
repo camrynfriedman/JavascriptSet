@@ -55,7 +55,7 @@ function displayCards(){
             let cell = row.insertCell();
             let card = tableCards[i];
             //.innerHTML is used to get/set the HTML content of an element node
-            cell.innerHTML = '<a class = "cardImage" id = "' + card.imageName + '" value = "" href= "javascript:void(0);" onclick="checkSet(' + i + ');" > <img class="card" src = "' + card.imageName + '"  ></a>'; //NEED TO GET CARD'S SOURCE!
+            cell.innerHTML = '<a class = "cardImage" id = "' + card.imageName + '" value = "" href= "javascript:void(0);" onclick="checkSet(' + i + ');" > <img class="card" src = "' + card.imageName + '"  alt = "' + card.imageName+'" ></a>'; //NEED TO GET CARD'S SOURCE!
             i++;
         }
     }
