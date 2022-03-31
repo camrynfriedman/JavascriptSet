@@ -10,15 +10,8 @@ p{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-h1{
-    display: flex;
-    justify-content: center;
-    font-family: "Bungee Shade";
-    color: rgb(80, 80, 80);
-    font-size: 3rem;
-}
 
-h2{
+h1{
     margin-top: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -89,8 +82,7 @@ table{
 }
 
 .grid-container {
-display: flex;
-    grid-template-columns: 1fr 1fr 4fr 2fr;
+    display: flex;
     background-color: #ffffff;
     padding: 10px;
   }
