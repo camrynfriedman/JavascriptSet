@@ -89,7 +89,8 @@ function checkSet(spot){
         let result = document.getElementById("check");
         if(checkEachCharacteristic(savedCards[0].symbol, savedCards[1].symbol, savedCards[2].symbol) && checkEachCharacteristic(savedCards[0].color, savedCards[1].color, savedCards[2].color) && checkEachCharacteristic(savedCards[0].numSym, savedCards[1].numSym, savedCards[2].numSym) && checkEachCharacteristic(savedCards[0].shading, savedCards[1].shading, savedCards[2].shading) && savedCards[0]!=savedCards[1] && savedCards[0] != savedCards[2] && savedCards[1] != savedCards[2]){
             totalSets++;
-            alert("You found a set!");
+            document.getElementById("check").textContent = "You found a set!";
+            document.getElementById("count").textContent = "You have found " + totalSets +" Sets!";
             //remove highlight
             removeThreeCards();
             if(tableCards.length < 12){
@@ -100,7 +101,7 @@ function checkSet(spot){
             document.getElementById("hintCard").innerHTML = "";
         
         }else{
-            alert("That is not a set");
+            document.getElementById("check").textContent = "That is not a set!";
             removeHighlight();
         }
     savedCards.length = 0;
@@ -141,7 +142,7 @@ function addThreeCards(check) {
             displayCards();
         }
     }else{
-        alert("There are no more cards left in the deck!")
+        document.getElementById("check").textContent = "There are no more cards left in the deck!";
     }
 
 
@@ -174,7 +175,7 @@ function hintSet(){
     } else {
         let hintCard = document.getElementById("hintCard");
         let hintCards = [card1, card2, card3];
-        hintCard.innerHTML = '<img class="card" src = "' + hintCards[Math.floor(Math.random() * 3)].imageName + '"  ></img>';
+        hintCard.innerHTML = '<img src = "' + hintCards[Math.floor(Math.random() * 3)].imageName + '"  ></img>';
     }
 }
 

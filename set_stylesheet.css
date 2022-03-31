@@ -93,12 +93,16 @@ table{
     text-align: center;
   }
 
-  .image-grid-item{
-      scale: 1;
-  }
   .image-grid-item {
       grid-column-start: 3;
       grid-column-end: 5;
       grid-row-start: 1;
       grid-row-end: 3;
+  }
+
+  #count, #check{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    font-size: larger;
+    text-align: center;
   }
